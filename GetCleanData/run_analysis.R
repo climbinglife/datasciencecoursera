@@ -52,4 +52,8 @@ rel.data <- rel.data[,c(colnames(rel.data)[n], colnames(rel.data)[1:(n-1)])]
 rel.data <- select(rel.data, -(activity.index))
 
 # Get the tidy summary data table
+data.melt <- melt(rel.data, id=c("subject","activity"))
+tidy.summary.table <- dcast(data.melt, subject + activity ~ variable, mean)
 
+# Write table
+write.table(tidy.summary.table, file="tidy.summary.txt", row.name=FALSE)
