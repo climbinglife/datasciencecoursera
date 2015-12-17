@@ -3,7 +3,7 @@ library(plyr)
 library(dplyr)
 library(reshape2)
 
-folder = "C:/Coursera/Course project/Getting and Cleaning Data"
+folder = "C:/Projects/Data Science/SmartPhone"
 
 setwd(folder)
 
